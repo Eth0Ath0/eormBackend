@@ -3,6 +3,8 @@ package gt.com.edu.security.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,6 +25,16 @@ public class RolServiceImpl implements IRolService{
 		// TODO Auto-generated method stub
 		return (List<Rol>)rolDao.findAll();
 	}
+	
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Page<Rol> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return rolDao.findAll(pageable);
+	}
+
+	
 
 	@Override
 	public Rol findById(Integer id) {
@@ -42,4 +54,5 @@ public class RolServiceImpl implements IRolService{
 		
 	}
 
+	
 }

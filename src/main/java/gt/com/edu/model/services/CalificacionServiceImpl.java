@@ -3,6 +3,8 @@ package gt.com.edu.model.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +23,16 @@ public class CalificacionServiceImpl implements ICalificacionService{
 		// TODO Auto-generated method stub
 		return (List<Calificacion>)icalificacionDao.findAll();
 	}
+	
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Page<Calificacion> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return icalificacionDao.findAll(pageable);
+	}
+	
+	
 
 	@Override
 	@Transactional(readOnly = true)
@@ -40,6 +52,7 @@ public class CalificacionServiceImpl implements ICalificacionService{
 		// TODO Auto-generated method stub
 		icalificacionDao.deleteById(id);
 	}
+
 	
 	
 	

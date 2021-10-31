@@ -5,6 +5,8 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +24,16 @@ public class ClaseServiceImpl implements IClaseService {
 		// TODO Auto-generated method stub
 		return (List<Clase>)iclaseDao.findAll();
 	}
+	
+	
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Page<Clase> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return iclaseDao.findAll(pageable);
+	}
+
 
 	@Override
 	@Transactional(readOnly = true)
@@ -42,4 +54,5 @@ public class ClaseServiceImpl implements IClaseService {
 		iclaseDao.deleteById(id);
 	}
 
+	
 }

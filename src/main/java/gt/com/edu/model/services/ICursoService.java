@@ -2,18 +2,24 @@ package gt.com.edu.model.services;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+
 import gt.com.edu.models.entity.Curso;
 
 
 public interface ICursoService {
 	
 	 //listar curso
-		List<Curso> findAll();
+		public List<Curso> findAll();
+		
+		public Page<Curso> findAll(Pageable pageable);
 		//buscar curso por id
-		Curso findById(Long id);
+		public Curso findById(Long id);
 	    //guardar curso 
-		Curso save(Curso curso);
+		public Curso save(Curso curso);
 	    //eliminar curso
-		void delete(Long id);
+		public void delete(Long id);
 
 }

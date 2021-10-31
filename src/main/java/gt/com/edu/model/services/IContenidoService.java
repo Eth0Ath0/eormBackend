@@ -2,18 +2,23 @@ package gt.com.edu.model.services;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+
 import gt.com.edu.models.entity.Contenido;
 
 
 public interface IContenidoService {
 	
 	//listar contenido
-	List<Contenido> findAll();
+	public List<Contenido> findAll();
+	public Page<Contenido> findAll(Pageable pageable);
 	//buscar  contenido por id
-	Contenido findById(Long id);
+	public Contenido findById(Long id);
     //guardar contenido 
-	Contenido save(Contenido contenido);
+	public Contenido save(Contenido contenido);
     //eliminar contenido
-	void delete(Long id);
+	public void delete(Long id);
 
 }

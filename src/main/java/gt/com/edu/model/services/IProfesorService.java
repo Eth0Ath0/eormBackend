@@ -1,17 +1,24 @@
 package gt.com.edu.model.services;
 
 import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+
 import gt.com.edu.models.entity.Profesor;
 
 public interface IProfesorService {
 	
 	        //listar profesor
-			List<Profesor> findAll();
+			public List<Profesor> findAll();
+			
+			public Page<Profesor> findAll(Pageable pageable);
 			//buscar profesor por id
-			Profesor findById(Long id);
+			public Profesor findById(Long id);
 		    //guardar profesor 
-			Profesor save(Profesor profesor);
+			public Profesor save(Profesor profesor);
 		    //eliminar profesor
-			void delete(Long id);
+			public void delete(Long id);
 
 }

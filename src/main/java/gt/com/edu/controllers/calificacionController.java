@@ -3,6 +3,9 @@ package gt.com.edu.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -34,6 +37,9 @@ public class calificacionController {
 	public IEstudianteService estudianteService;
 	@Autowired
 	public ICursoService cursoService;
+	
+	
+	
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR') OR hasRole('ESTUDIANTE')")
 	@GetMapping("/listar")
 	public List<Calificacion> listarCalificaciones(){
@@ -41,6 +47,19 @@ public class calificacionController {
 	
 		
 	}
+	
+	
+	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR') OR hasRole('ESTUDIANTE')")
+	@GetMapping("/listar/page/{page}")
+	public Page<Calificacion> listarCalificaciones(@PathVariable Integer page){
+		Pageable pageable=PageRequest.of(page, 5);
+		return calificacionService.findAll(pageable);
+	
+		
+	}
+	
+	
+	
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR') OR hasRole('ESTUDIANTE')")
 	@GetMapping("/estudiantes")
 	public List<Estudiante> listarEstudiantes(){

@@ -3,6 +3,8 @@ package gt.com.edu.model.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +22,16 @@ public class ResponsableServiceImpl implements IResponsableService {
 		// listar responsables
 	return (List<Responsable>) responsableDao.findAll();
 	}
+	
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Page<Responsable> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return responsableDao.findAll(pageable);
+	}
+	
+	
 	
 	@Override
 	@Transactional(readOnly = true)
@@ -46,6 +58,7 @@ public class ResponsableServiceImpl implements IResponsableService {
 		// TODO Auto-generated method stub
 		return responsableDao.estudiantes(id);
 	}
+
 	
 	
 	

@@ -3,6 +3,8 @@ package gt.com.edu.model.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +23,17 @@ public class ProfesorServiceImpl implements IProfesorService {
 		// TODO Auto-generated method stub
 		return (List<Profesor>) iprofesorDao.findAll();
 	}
+	
+	
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Page<Profesor> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return iprofesorDao.findAll(pageable);
+	}
+
+	
 
 	@Override
 	@Transactional(readOnly = true)
@@ -41,5 +54,6 @@ public class ProfesorServiceImpl implements IProfesorService {
 		iprofesorDao.deleteById(id);
 	}
 
+	
 	
 }

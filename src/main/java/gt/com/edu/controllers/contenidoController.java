@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
@@ -52,6 +55,18 @@ public class contenidoController {
 	
 		
 	}
+	
+	@PreAuthorize("hasRole('ADMIN') AND hasRole('PROFESOR') OR hasRole('ESTUDIANTES')")
+	@GetMapping("/listar/page/{page}")
+	public Page<Contenido> listarContenidos(@PathVariable Integer page){
+		Pageable pageable=PageRequest.of(page, 5);
+		return contenidoService.findAll(pageable);
+	
+		
+	}
+	
+	
+	
 	
 	@PreAuthorize("hasRole('ADMIN') AND hasRole('PROFESOR') OR hasRole('ESTUDIANTE')")
 	@GetMapping("/clases")

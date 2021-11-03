@@ -26,7 +26,7 @@ import gt.com.edu.models.entity.Grado;
 
 @RestController
 @RequestMapping("/api/grados")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 public class gradoController {
 	
 	@Autowired

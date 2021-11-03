@@ -19,7 +19,7 @@ import gt.com.edu.security.service.IUsuarioService;
 
 @RestController
 @RequestMapping("/api/usuarios")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 public class usuarioController {
 	
 @Autowired

@@ -35,7 +35,7 @@ import gt.com.edu.security.service.RolService;
 import gt.com.edu.security.service.UsuarioService;
 @RestController
 @RequestMapping("api/auth")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 public class AuthController {
 
     @Autowired

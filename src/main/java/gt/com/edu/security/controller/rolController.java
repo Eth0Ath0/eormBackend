@@ -19,7 +19,7 @@ import gt.com.edu.security.service.IRolService;
 
 @RestController
 @RequestMapping("/api/roles")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 public class rolController {
 	
 	@Autowired

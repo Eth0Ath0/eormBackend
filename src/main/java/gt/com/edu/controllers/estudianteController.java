@@ -33,8 +33,7 @@ import gt.com.edu.security.repositoty.UsuarioRepository;
 
 @RestController
 @RequestMapping("/api/estudiantes")
-@CrossOrigin()
-//@CrossOrigin(origins={"http"})
+@CrossOrigin(origins={"http://localhost:4200","*"})
 public class estudianteController {
 
 	@Autowired

@@ -29,7 +29,7 @@ import gt.com.edu.models.entity.Grado;
 import gt.com.edu.models.entity.Responsable;
 import gt.com.edu.security.entity.Usuario;
 import gt.com.edu.security.repositoty.UsuarioRepository;
-import gt.com.edu.security.service.UsuarioService;
+
 
 @RestController
 @RequestMapping("/api/estudiantes")
@@ -113,9 +113,9 @@ public class estudianteController {
 	
 	
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
-	@GetMapping("/buscar/{id}")
-	public Estudiante show(@PathVariable String  id) {
-		return estudianteservice.findById(id);
+	@GetMapping("/buscar/{codigo_personal}")
+	public Estudiante show(@PathVariable String  codigo_personal) {
+		return estudianteservice.findById(codigo_personal);
 		
 	}
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
@@ -126,11 +126,11 @@ public class estudianteController {
 		
 	}
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
-	@PutMapping("/actualizar/{id}")
+	@PutMapping("/actualizar/{codigo_personal}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Estudiante update(@RequestBody Estudiante estudiante, @PathVariable String id) {
+	public Estudiante update(@RequestBody Estudiante estudiante, @PathVariable String codigo_personal) {
 		
-		Estudiante estudianteActual=estudianteservice.findById(id);
+		Estudiante estudianteActual=estudianteservice.findById(codigo_personal);
 		estudianteActual.setCodigo_personal(estudiante.getCodigo_personal());
 		estudianteActual.setPrimer_nombre_estudiante(estudiante.getPrimer_nombre_estudiante());
 		estudianteActual.setSegundo_nombre_estudiante(estudiante.getPrimer_nombre_estudiante());
@@ -152,10 +152,10 @@ public class estudianteController {
 		return estudianteservice.save(estudianteActual);
 	}
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
-	@DeleteMapping("/eliminar/{id}")
+	@DeleteMapping("/eliminar/{codigo_personal}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable String id) {
-		estudianteservice.delete(id);
+	public void delete(@PathVariable String codigo_personal) {
+		estudianteservice.delete(codigo_personal);
 		
 		
 		

@@ -33,7 +33,7 @@ public class Matricula implements Serializable {
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
 	  private Long id_matricula;
 	  //@Temporal(TemporalType.DATE)
-	  @JsonFormat(pattern = "dd/MM/yyyy")
+	  @JsonFormat(pattern = "yyyy/MM/dd")
 	  private Date fecha_matricula;
 	  private String observaciones;
 	  

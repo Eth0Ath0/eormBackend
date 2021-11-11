@@ -55,7 +55,7 @@ public class gradoController {
 	
 	
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
-	@GetMapping("/buscar/{id}")
+	@GetMapping("/buscar/{id_grado}")
 	public Grado show(@PathVariable Long  id) {
 		return gradoService.findById(id);
 		
@@ -68,7 +68,7 @@ public class gradoController {
 		
 	}
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
-	@PutMapping("/actualizar/{id}")
+	@PutMapping("/actualizar/{id_grado}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Grado update(@RequestBody Grado grado, @PathVariable Long id) {
 		
@@ -80,10 +80,14 @@ public class gradoController {
 		return gradoService.save(gradoActual);
 	}
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
-	@DeleteMapping("/eliminar/{id}")
+	@DeleteMapping("/eliminar/{id_grado}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id){
+	
 	gradoService.delete(id);
+	
+	
+	
 		
 		
 		

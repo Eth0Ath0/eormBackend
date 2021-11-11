@@ -103,7 +103,9 @@ public class contenidoController {
     	String nombreArchivo=service.uploadFile(file);
     	
     	Contenido contenido=new Contenido();
+    	
     	java.util.Date fecha = new Date();
+    	
     	contenido.setArchivo(nombreArchivo);
     	contenido.setNombre_contenido(nombre_contenido);
     	contenido.setFecha_creacion(fecha);

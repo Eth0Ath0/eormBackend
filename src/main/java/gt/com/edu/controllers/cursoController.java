@@ -24,7 +24,7 @@ import gt.com.edu.models.entity.Curso;
 
 @RestController
 @RequestMapping("/api/cursos")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 public class cursoController {
 	
 	@Autowired

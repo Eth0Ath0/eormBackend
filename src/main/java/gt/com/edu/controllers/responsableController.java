@@ -26,7 +26,7 @@ import gt.com.edu.models.entity.Estudiante;
 import gt.com.edu.models.entity.Responsable;
 @RestController
 @RequestMapping("/api/responsables")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 public class responsableController {
 	@Autowired
 	private IResponsableService responsableservice;

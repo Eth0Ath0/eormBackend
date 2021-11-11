@@ -33,7 +33,7 @@ import gt.com.edu.models.entity.Contenido;
 
 @RestController
 @RequestMapping("/api/contenidos")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 public class contenidoController {
 	
 	@Autowired

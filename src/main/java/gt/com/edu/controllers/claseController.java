@@ -30,7 +30,7 @@ import gt.com.edu.models.entity.Profesor;
 
 @RestController
 @RequestMapping("/api/clases")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 public class claseController {
 	
 	@Autowired

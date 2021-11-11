@@ -27,7 +27,8 @@ import gt.com.edu.models.entity.Matricula;
 
 @RestController
 @RequestMapping("/api/matriculas")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
+//@CrossOrigin(origins={"http://localhost:4200","*"})
 public class matriculaController {
 	
 	@Autowired

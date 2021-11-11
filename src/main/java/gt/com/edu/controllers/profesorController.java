@@ -28,7 +28,7 @@ import gt.com.edu.security.repositoty.UsuarioRepository;
 
 @RestController
 @RequestMapping("/api/profesores")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 public class profesorController {
 	
 	

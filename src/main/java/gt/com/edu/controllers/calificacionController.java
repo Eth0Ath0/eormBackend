@@ -28,7 +28,7 @@ import gt.com.edu.models.entity.Estudiante;
 
 @RestController
 @RequestMapping("/api/calificaciones")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 public class calificacionController {
 	
 	@Autowired

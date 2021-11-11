@@ -16,6 +16,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.sun.istack.NotNull;
 
 
@@ -23,6 +25,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="usuarios")
+
 public class Usuario {
 	
 	 @Id

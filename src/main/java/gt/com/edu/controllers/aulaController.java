@@ -27,7 +27,7 @@ import gt.com.edu.models.entity.Grado;
 
 @RestController
 @RequestMapping("/api/aulas")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 public class aulaController {
 	@Autowired
 	private IAulaService aulaService;

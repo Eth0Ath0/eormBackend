@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import gt.com.edu.security.entity.Usuario;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
 	Optional<Usuario> findByNombreUsuario(String nombreUsuario);
     boolean existsByNombreUsuario(String nombreUsuario);

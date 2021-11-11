@@ -112,9 +112,9 @@ public class estudianteController {
 	
 	
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
-	@GetMapping("/buscar/{codigo_personal}")
-	public Estudiante show(@PathVariable String  codigo_personal) {
-		return estudianteservice.findById(codigo_personal);
+	@GetMapping("/buscar/{id}")
+	public Estudiante show(@PathVariable String  id) {
+		return estudianteservice.findById(id);
 		
 	}
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
@@ -125,11 +125,11 @@ public class estudianteController {
 		
 	}
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
-	@PutMapping("/actualizar/{codigo_personal}")
+	@PutMapping("/actualizar/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Estudiante update(@RequestBody Estudiante estudiante, @PathVariable String codigo_personal) {
+	public Estudiante update(@RequestBody Estudiante estudiante, @PathVariable String id) {
 		
-		Estudiante estudianteActual=estudianteservice.findById(codigo_personal);
+		Estudiante estudianteActual=estudianteservice.findById(id);
 		estudianteActual.setCodigo_personal(estudiante.getCodigo_personal());
 		estudianteActual.setPrimer_nombre_estudiante(estudiante.getPrimer_nombre_estudiante());
 		estudianteActual.setSegundo_nombre_estudiante(estudiante.getPrimer_nombre_estudiante());
@@ -151,10 +151,10 @@ public class estudianteController {
 		return estudianteservice.save(estudianteActual);
 	}
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
-	@DeleteMapping("/eliminar/{codigo_personal}")
+	@DeleteMapping("/eliminar/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable String codigo_personal) {
-		estudianteservice.delete(codigo_personal);
+	public void delete(@PathVariable String id) {
+		estudianteservice.delete(id);
 		
 		
 		

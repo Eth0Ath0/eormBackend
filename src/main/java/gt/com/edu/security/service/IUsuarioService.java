@@ -13,11 +13,11 @@ public interface IUsuarioService {
 	
 	public Page<Usuario> findAll(Pageable pageable);
 	
-	public Usuario findById(Integer id);
+	public Usuario findById(Long id);
     
 	public Usuario save(Usuario usuario);
    
-	public void delete(Integer id);
+	public void delete(Long id);
 
 
 }

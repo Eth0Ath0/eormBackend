@@ -33,7 +33,7 @@ import gt.com.edu.security.service.UsuarioService;
 
 @RestController
 @RequestMapping("/api/estudiantes")
-@CrossOrigin(origins={"http://localhost:4200","*"})
+@CrossOrigin()
 //@CrossOrigin(origins={"http"})
 public class estudianteController {
 

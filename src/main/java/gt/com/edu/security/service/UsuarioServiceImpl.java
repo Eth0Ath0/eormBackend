@@ -32,7 +32,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		return usuarioDao.findAll(pageable);
 	}
 	
-
+/*
 	@Override
 	public Usuario findById(Integer id) {
 		// TODO Auto-generated method stub
@@ -49,6 +49,27 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	public void delete(Integer id) {
 		// TODO Auto-generated method stub
 		
+	}
+
+*/
+	@Override
+	public Usuario findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public Usuario save(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

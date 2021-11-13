@@ -75,18 +75,23 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	}
 
 
-@Override
-public Usuario findById(Long id) {
-	// TODO Auto-generated method stub
-	return null;
-}
+	@Override
+	public Usuario findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
-@Override
-public void delete(Long id) {
-	// TODO Auto-generated method stub
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	
-}
+
+
 
 }
 

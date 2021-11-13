@@ -56,7 +56,7 @@ public class usuarioController {
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
 	@GetMapping("/buscar/{id}")
 	public Usuario show(@PathVariable Long  id) {
-		return usuarioServiceImpl.findById(id);
+		return usuarioService.findById(id);
 		
 	}
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
@@ -71,7 +71,7 @@ public class usuarioController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id) {
 		
-		Usuario usuarioActual=usuarioServiceImpl.findById(id);
+		Usuario usuarioActual=usuarioService.findById(id);
 		
 		usuarioActual.setId(usuario.getId());
 		usuarioActual.setNombre(usuario.getNombre());
@@ -87,7 +87,7 @@ public class usuarioController {
 	@DeleteMapping("/eliminar/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id){
-	usuarioServiceImpl.delete(id);
+	usuarioService.delete(id);
 		
 		
 		

@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import gt.com.edu.security.entity.Rol;
 
-public interface IRolDao extends JpaRepository<Rol, Integer>{
+public interface IRolDao extends JpaRepository<Rol, Long>{
 
 }

@@ -37,7 +37,7 @@ public class RolServiceImpl implements IRolService{
 	
 
 	@Override
-	public Rol findById(Integer id) {
+	public Rol findById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -49,7 +49,7 @@ public class RolServiceImpl implements IRolService{
 	}
 
 	@Override
-	public void delete(Integer id) {
+	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		
 	}

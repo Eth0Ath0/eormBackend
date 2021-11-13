@@ -15,10 +15,10 @@ public interface IRolService {
 	
 	public Page<Rol> findAll(Pageable pageable);
     
-	public Rol findById(Integer id);
+	public Rol findById(Long id);
     
 	public Rol save(Rol rol);
    
-	public void delete(Integer id);
+	public void delete(Long id);
 
 }

@@ -96,7 +96,8 @@ public class contenidoController {
 	//cargar un archivo al bucket AWS
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
 	@PostMapping("/upload")
-	public ResponseEntity<String> uploadFile(@RequestParam( value ="file") MultipartFile file, @RequestParam("id_clase")String id_clase,@RequestParam("nombre_contenido")String nombre_contenido) {
+	public ResponseEntity<String> uploadFile(@RequestParam( value ="file") MultipartFile file,
+	@RequestParam("id_clase")String id_clase,@RequestParam("nombre_contenido")String nombre_contenido) {
 		
     	Clase clase= claseService.findById(Long.parseLong(id_clase));
     	

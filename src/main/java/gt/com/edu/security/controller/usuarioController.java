@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import gt.com.edu.models.entity.Curso;
 import gt.com.edu.security.entity.Usuario;
 import gt.com.edu.security.service.IUsuarioService;
+import gt.com.edu.security.service.UsuarioServiceImpl;
 
 
 @RestController
@@ -31,6 +32,8 @@ public class usuarioController {
 	
 @Autowired
 	public IUsuarioService usuarioService;
+@Autowired
+    public UsuarioServiceImpl usuarioServiceImpl;
 	
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
 	@GetMapping("/listar")
@@ -53,7 +56,7 @@ public class usuarioController {
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
 	@GetMapping("/buscar/{id}")
 	public Usuario show(@PathVariable Long  id) {
-		return usuarioService.findById(id);
+		return usuarioServiceImpl.findById(id);
 		
 	}
 	@PreAuthorize("hasRole('ADMIN') OR hasRole('PROFESOR')")
@@ -68,7 +71,7 @@ public class usuarioController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id) {
 		
-		Usuario usuarioActual=usuarioService.findById(id);
+		Usuario usuarioActual=usuarioServiceImpl.findById(id);
 		
 		usuarioActual.setId(usuario.getId());
 		usuarioActual.setNombre(usuario.getNombre());
@@ -84,7 +87,7 @@ public class usuarioController {
 	@DeleteMapping("/eliminar/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id){
-	usuarioService.delete(id);
+	usuarioServiceImpl.delete(id);
 		
 		
 		

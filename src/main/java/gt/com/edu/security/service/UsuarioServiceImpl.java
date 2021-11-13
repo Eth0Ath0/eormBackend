@@ -53,7 +53,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 */
 
 	
-	@Override
+	/*@Override
 	public Usuario findById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
@@ -65,7 +65,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		// TODO Auto-generated method stub
 		
 	}
-
+*/
 
 	@Override
 	public Usuario save(Usuario usuario) {
@@ -73,6 +73,20 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		return null;
 		
 	}
+
+
+@Override
+public Usuario findById(Long id) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+@Override
+public void delete(Long id) {
+	// TODO Auto-generated method stub
+	
+}
 
 }
 
